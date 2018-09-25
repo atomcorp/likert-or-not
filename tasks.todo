@@ -1,0 +1,15 @@
+Next:
+  
+Inbox: 
+  ☐ Use CSS Grid, with a fallback (or table?)
+  ☐ Structure should utilise composition
+     Header/columns = Rating scales / labels / answers
+     Rows = Question/Statements
+     Radios = Items
+  ☐ Header (text above questionnaire)
+  ☐ Header/columns name !== value necessarily
+  ☐ Checkboxes for multiple choice
+  ☐ Error states / messages / criteria
+  ☐ Examples for testing
+
+Later:
