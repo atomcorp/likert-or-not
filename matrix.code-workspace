@@ -1,7 +1,18 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	]
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/node_modules": true,
+      "node_modules": true,
+      "/home/tom/Sites/matrix/node_modules": true,
+      "/home/tom/Sites/matrix/.git": true
+    }
+  }
 }
