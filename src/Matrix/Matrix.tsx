@@ -20,14 +20,12 @@ interface MatrixProps {
 const Matrix = (props: MatrixProps) => (
   <div className={css.container}>
     <Title>The title</Title>
-    <div className={css.grid}>
-      <Columns labels={props.labels} />
-      <Rows
-        statements={props.rows}
-        options={props.labels.length}
-        handleClick={props.handleClick}
-      />
-    </div>
+    <Columns labels={props.labels} />
+    <Rows
+      statements={props.rows}
+      options={props.labels.length}
+      handleClick={props.handleClick}
+    />
   </div>
 );
 

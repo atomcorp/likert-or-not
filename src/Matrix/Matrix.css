@@ -1,5 +1,9 @@
+:root {
+  --element-columns: 1;
+}
+
 .grid {
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr repeat(var(--element-columns), 1fr);
+  grid-template-rows: 1fr;
 }
