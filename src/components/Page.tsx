@@ -1,21 +1,11 @@
 import * as React from 'react';
-import Matrix, {Title, Columns, Rows} from '../Matrix/Matrix';
-
+import Matrix from '../Matrix/Matrix';
+import dataset from './dataset';
 const Page = () => (
   <div>
     <h1>Page</h1>
     <div>
-      <Matrix>
-        <Title>The title</Title>
-        <Columns labels={['Good', 'OK', 'Bad']} />
-        <Rows
-          statements={[
-            'Willingness to help',
-            'Efficiency/quickness',
-            'Ability to complete transaction',
-          ]}
-        />
-      </Matrix>
+      <Matrix title="The title" labels={['Good', 'OK', 'Bad']} rows={dataset} />
     </div>
   </div>
 );

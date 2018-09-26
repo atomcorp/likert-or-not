@@ -1,11 +1,24 @@
 const dataset = [
   {
-    'Knowledge of the product': 1,
+    id: 'a',
+    statement: 'Courteousness',
+    value: 0,
   },
-  {Courteousness: 3},
-  {'Willingness to help': 1},
-  {'Efficiency/quickness': 3},
-  {'Ability to complete transaction': 2},
+  {
+    id: 'b',
+    statement: 'Willingness to help',
+    value: 2,
+  },
+  {
+    id: 'c',
+    statement: 'Efficiency/quickness',
+    value: 1,
+  },
+  {
+    id: 'd',
+    statement: 'Ability to complete transaction',
+    value: 0,
+  },
 ];
 
 export default dataset;
