@@ -11,7 +11,8 @@
     "interface-name": false,
     "jsx-boolean-value": false,
     "no-implicit-dependencies": [true, ["enzyme", "enzyme-adapter-react-16"]],
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "jsx-no-lambda": false
   },
   "linterOptions": {
     "exclude": [

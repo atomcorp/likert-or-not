@@ -14,13 +14,18 @@ interface MatrixProps {
   title: string;
   labels: string[];
   rows: RowsType;
+  handleClick: (props: {id: string; value: number}) => void;
 }
 
 const Matrix = (props: MatrixProps) => (
   <div className={css.container}>
     <Title>The title</Title>
     <Columns labels={props.labels} />
-    <Rows statements={props.rows} options={props.labels.length} />
+    <Rows
+      statements={props.rows}
+      options={props.labels.length}
+      handleClick={props.handleClick}
+    />
   </div>
 );
 
@@ -41,12 +46,18 @@ const Columns = (props: ColumnsProps) => (
 interface RowsProps {
   statements: RowsType;
   options: number;
+  handleClick: (props: {id: string; value: number}) => void;
 }
 
 const Rows = (props: RowsProps) => (
   <div>
     {props.statements.map((statement) => (
-      <Row key={statement.id} statement={statement} options={props.options} />
+      <Row
+        key={statement.id}
+        statement={statement}
+        options={props.options}
+        handleClick={props.handleClick}
+      />
     ))}
   </div>
 );
@@ -54,19 +65,38 @@ const Rows = (props: RowsProps) => (
 interface DomRowType {
   statement: RowType;
   options: number;
+  handleClick: (props: {id: string; value: number}) => void;
 }
 
 const Row = (props: DomRowType) => (
   <div>
     {props.statement.statement}
+    <Radios
+      options={props.options}
+      statement={props.statement}
+      handleClick={props.handleClick}
+    />
+  </div>
+);
+
+interface RadiosProps {
+  statement: RowType;
+  options: number;
+  handleClick: (props: {id: string; value: number}) => void;
+}
+
+const Radios = (props: RadiosProps) => (
+  <div>
     {Array.from(
       Array(props.options)
         .fill((index: number) => (
           <Radio
             key={index}
-            name={props.statement.statement}
+            name={props.statement.id}
             value={props.statement.value}
             checked={props.statement.value === index}
+            handleClick={props.handleClick}
+            index={index}
           />
         ))
         .map((radio, index) => radio(index))
@@ -78,6 +108,8 @@ interface Radio {
   name: string;
   value: number;
   checked: boolean;
+  index: number;
+  handleClick: (props: {id: string; value: number}) => void;
 }
 
 const Radio = (props: Radio) => (
@@ -86,6 +118,7 @@ const Radio = (props: Radio) => (
     value={props.value}
     type="radio"
     checked={props.checked}
+    onClick={() => props.handleClick({id: props.name, value: props.index})}
   />
 );
 
