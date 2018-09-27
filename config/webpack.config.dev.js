@@ -12,7 +12,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-
+const postcssNesting = require('postcss-nesting');
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 const publicPath = '/';
@@ -198,6 +198,7 @@ module.exports = {
                       ],
                       flexbox: 'no-2009',
                     }),
+                    postcssNesting(),
                   ],
                 },
               },

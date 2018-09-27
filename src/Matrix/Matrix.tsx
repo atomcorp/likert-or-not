@@ -42,7 +42,7 @@ interface ColumnsProps {
 const Columns = (props: ColumnsProps) => (
   <div className={css.columns}>
     {props.labels.map((label) => (
-      <div>{label}</div>
+      <div className={css.column}>{label}</div>
     ))}
   </div>
 );
@@ -54,7 +54,7 @@ interface RowsProps {
 }
 
 const Rows = (props: RowsProps) => (
-  <div>
+  <div className={css.rows}>
     {props.statements.map((statement) => (
       <Row
         key={statement.id}
@@ -73,8 +73,8 @@ interface DomRowType {
 }
 
 const Row = (props: DomRowType) => (
-  <div>
-    {props.statement.statement}
+  <div className={css.row}>
+    <div className={css.statement}>{props.statement.statement}</div>
     <Radios
       options={props.options}
       statement={props.statement}
@@ -90,7 +90,7 @@ interface RadiosProps {
 }
 
 const Radios = (props: RadiosProps) => (
-  <div>
+  <div className={css.radios}>
     {Array.from(
       Array(props.options)
         .fill((index: number) => (
@@ -118,6 +118,7 @@ interface Radio {
 
 const Radio = (props: Radio) => (
   <input
+    className={css.radio}
     name={props.name}
     value={props.value}
     type="radio"

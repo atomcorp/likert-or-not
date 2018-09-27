@@ -1,7 +1,7 @@
 Next:
   
 Inbox: 
-  ☐ Use CSS Grid, with a fallback (or table?)
+  ✘ Use CSS Grid, with a fallback (or table?) @cancelled(18-09-27 21:28)
   ☐ Structure should utilise composition
      Header/columns = Rating scales / labels / answers
      Rows = Question/Statements
