@@ -2,22 +2,22 @@ const dataset = [
   {
     id: 'a',
     statement: 'Courteousness',
-    value: 0,
+    value: 'A',
   },
   {
     id: 'b',
     statement: 'Willingness to help',
-    value: 2,
+    value: 'B',
   },
   {
     id: 'c',
     statement: 'Efficiency/quickness',
-    value: 1,
+    value: 'C',
   },
   {
     id: 'd',
     statement: 'Ability to complete transaction',
-    value: 0,
+    value: 'A',
   },
 ];
 

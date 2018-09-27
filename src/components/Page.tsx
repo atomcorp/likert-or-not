@@ -5,7 +5,7 @@ import dataset from './dataset';
 interface Dataset {
   id: string;
   statement: string;
-  value: number;
+  value: number | string;
 }
 
 const Page = () => (
@@ -43,12 +43,25 @@ class Example extends React.Component<{}, State> {
   };
   render() {
     return (
-      <Matrix
-        title="The title"
-        labels={['Good', 'OK', 'Bad']}
-        rows={this.state.dataset}
-        handleClick={this.handleClick}
-      />
+      <div>
+        <h3>Possible values: {['A', 'B', 'C'].join(', ')}</h3>
+        <table>
+          <tbody>
+            {this.state.dataset.map((row) => (
+              <tr>
+                <td>{row.statement}</td> <td>{row.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <Matrix
+          title="The title"
+          labels={['Good', 'OK', 'Bad']}
+          values={['A', 'B', 'C']}
+          rows={this.state.dataset}
+          handleClick={this.handleClick}
+        />
+      </div>
     );
   }
 }

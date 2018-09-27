@@ -2,14 +2,15 @@ Next:
   
 Inbox: 
   ✘ Use CSS Grid, with a fallback (or table?) @cancelled(18-09-27 21:28)
-  ☐ Structure should utilise composition
+  ✔ Structure should utilise composition @done(18-09-27 22:09)
      Header/columns = Rating scales / labels / answers
      Rows = Question/Statements
      Radios = Items
-  ☐ Header (text above questionnaire)
+  ✔ Header (text above questionnaire) @done(18-09-27 22:09)
   ☐ Header/columns name !== value necessarily
   ☐ Checkboxes for multiple choice
   ☐ Error states / messages / criteria
   ☐ Examples for testing
+  ☐ More generic row that can build both header and statement rows, easier to style and reason about
 
 Later:

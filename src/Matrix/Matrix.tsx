@@ -4,7 +4,12 @@ import css from './Matrix.css';
 interface RowType {
   id: string;
   statement: string;
-  value: number;
+  value: number | string;
+}
+
+interface ClickProps {
+  id: string;
+  value: number | string;
 }
 
 type RowsType = RowType[];
@@ -14,7 +19,8 @@ interface MatrixProps {
   title: string;
   labels: string[];
   rows: RowsType;
-  handleClick: (props: {id: string; value: number}) => void;
+  handleClick: (props: ClickProps) => void;
+  values?: string[] | number[];
 }
 
 const Matrix = (props: MatrixProps) => (
@@ -25,6 +31,7 @@ const Matrix = (props: MatrixProps) => (
       statements={props.rows}
       options={props.labels.length}
       handleClick={props.handleClick}
+      values={props.values}
     />
   </div>
 );
@@ -42,7 +49,9 @@ interface ColumnsProps {
 const Columns = (props: ColumnsProps) => (
   <div className={css.columns}>
     {props.labels.map((label) => (
-      <div className={css.column}>{label}</div>
+      <div key={label} className={css.column}>
+        {label}
+      </div>
     ))}
   </div>
 );
@@ -50,7 +59,8 @@ const Columns = (props: ColumnsProps) => (
 interface RowsProps {
   statements: RowsType;
   options: number;
-  handleClick: (props: {id: string; value: number}) => void;
+  handleClick: (props: ClickProps) => void;
+  values?: string[] | number[];
 }
 
 const Rows = (props: RowsProps) => (
@@ -61,6 +71,7 @@ const Rows = (props: RowsProps) => (
         statement={statement}
         options={props.options}
         handleClick={props.handleClick}
+        values={props.values}
       />
     ))}
   </div>
@@ -69,7 +80,8 @@ const Rows = (props: RowsProps) => (
 interface DomRowType {
   statement: RowType;
   options: number;
-  handleClick: (props: {id: string; value: number}) => void;
+  handleClick: (props: ClickProps) => void;
+  values?: string[] | number[];
 }
 
 const Row = (props: DomRowType) => (
@@ -79,14 +91,32 @@ const Row = (props: DomRowType) => (
       options={props.options}
       statement={props.statement}
       handleClick={props.handleClick}
+      values={props.values}
     />
   </div>
 );
 
+interface IsCheckProps {
+  value: string | number;
+  values?: string[] | number[];
+  index: number;
+}
+
+const isChecked = (props: IsCheckProps) => {
+  if (props.values && props.values.length > 0) {
+    return props.value === props.values[props.index];
+  }
+  if (typeof props.value === 'string') {
+    return parseInt(props.value, 10) === props.index;
+  }
+  return props.value === props.index;
+};
+
 interface RadiosProps {
   statement: RowType;
   options: number;
-  handleClick: (props: {id: string; value: number}) => void;
+  handleClick: (props: ClickProps) => void;
+  values?: string[] | number[];
 }
 
 const Radios = (props: RadiosProps) => (
@@ -98,9 +128,14 @@ const Radios = (props: RadiosProps) => (
             key={index}
             name={props.statement.id}
             value={props.statement.value}
-            checked={props.statement.value === index}
+            checked={isChecked({
+              value: props.statement.value,
+              values: props.values,
+              index,
+            })}
             handleClick={props.handleClick}
             index={index}
+            values={props.values}
           />
         ))
         .map((radio, index) => radio(index))
@@ -108,12 +143,25 @@ const Radios = (props: RadiosProps) => (
   </div>
 );
 
+interface ReturnValueProps {
+  index: number;
+  values?: string[] | number[];
+}
+
+const returnValue = (props: ReturnValueProps) => {
+  if (props.values && props.values.length > 0) {
+    return props.values[props.index];
+  }
+  return props.index;
+};
+
 interface Radio {
   name: string;
-  value: number;
+  value: number | string;
   checked: boolean;
   index: number;
-  handleClick: (props: {id: string; value: number}) => void;
+  handleClick: (props: ClickProps) => void;
+  values?: string[] | number[];
 }
 
 const Radio = (props: Radio) => (
@@ -123,7 +171,12 @@ const Radio = (props: Radio) => (
     value={props.value}
     type="radio"
     checked={props.checked}
-    onClick={() => props.handleClick({id: props.name, value: props.index})}
+    onChange={() =>
+      props.handleClick({
+        id: props.name,
+        value: returnValue({index: props.index, values: props.values}),
+      })
+    }
   />
 );
 
