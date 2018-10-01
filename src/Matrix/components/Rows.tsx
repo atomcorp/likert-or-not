@@ -1,14 +1,13 @@
 import * as React from 'react';
 import css from '../Matrix.css';
 
-import {RowsType, ClickProps, RowType} from '../definitions';
-
-interface RowsProps {
-  statements: RowsType;
-  options: number;
-  handleClick: (props: ClickProps) => void;
-  values?: string[] | number[];
-}
+import {
+  RowsProps,
+  DomRowType,
+  ReturnValueProps,
+  Radio,
+  IsCheckProps,
+} from '../definitions';
 
 const Rows = (props: RowsProps) => (
   <tbody className={css.rows}>
@@ -23,13 +22,6 @@ const Rows = (props: RowsProps) => (
     ))}
   </tbody>
 );
-
-interface DomRowType {
-  statement: RowType;
-  options: number;
-  handleClick: (props: ClickProps) => void;
-  values?: string[] | number[];
-}
 
 const Row = (props: DomRowType) => (
   <tr className={css.row}>
@@ -57,12 +49,6 @@ const Row = (props: DomRowType) => (
   </tr>
 );
 
-interface IsCheckProps {
-  value: string | number;
-  values?: string[] | number[];
-  index: number;
-}
-
 const isChecked = (props: IsCheckProps) => {
   if (props.values && props.values.length > 0) {
     return props.value === props.values[props.index];
@@ -82,26 +68,12 @@ const isChecked = (props: IsCheckProps) => {
 
 // const Radios = (props: RadiosProps) => <div className={css.radios} />;
 
-interface ReturnValueProps {
-  index: number;
-  values?: string[] | number[];
-}
-
 const returnValue = (props: ReturnValueProps) => {
   if (props.values && props.values.length > 0) {
     return props.values[props.index];
   }
   return props.index;
 };
-
-interface Radio {
-  name: string;
-  value: number | string;
-  checked: boolean;
-  index: number;
-  handleClick: (props: ClickProps) => void;
-  values?: string[] | number[];
-}
 
 const Radio = (props: Radio) => (
   <input
