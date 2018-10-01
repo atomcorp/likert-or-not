@@ -1,5 +1,6 @@
 Next:
-  ☐ More generic row that can build both header and statement rows, easier to style and reason about
+  ✔ More generic row that can build both header and statement rows, easier to style and reason about @done(18-10-01 23:44)
+  ☐ compose/make-more-readable the Radio method
   
 Inbox: 
   ✘ Use CSS Grid, with a fallback (or table?) @cancelled(18-09-27 21:28)
@@ -12,5 +13,9 @@ Inbox:
   ☐ Checkboxes for multiple choice
   ☐ Error states / messages / criteria
   ☐ Examples for testing
+  ☐ For public examples, show the React component structure
+  ☐ deffo do want <Table /> (not sure)
+  ☐ Whether using <Table /> or <div />, make responsive
+  ☐ use CSS variables for changing CSS options (like responsive size) in the main component
 
 Later:

@@ -54,6 +54,17 @@ class Example extends React.Component<{}, State> {
             ))}
           </tbody>
         </table>
+        <pre>
+          {`
+            <Matrix
+              title="The title"
+              labels={['Good', 'OK', 'Bad']}
+              values={['A', 'B', 'C']}
+              rows={this.state.dataset}
+              handleClick={this.handleClick}
+            />
+          `}
+        </pre>
         <Matrix
           title="The title"
           labels={['Good', 'OK', 'Bad']}
