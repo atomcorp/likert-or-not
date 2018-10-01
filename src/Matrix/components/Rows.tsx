@@ -11,7 +11,7 @@ interface RowsProps {
 }
 
 const Rows = (props: RowsProps) => (
-  <div className={css.rows}>
+  <tbody className={css.rows}>
     {props.statements.map((statement) => (
       <Row
         key={statement.id}
@@ -21,7 +21,7 @@ const Rows = (props: RowsProps) => (
         values={props.values}
       />
     ))}
-  </div>
+  </tbody>
 );
 
 interface DomRowType {
@@ -32,15 +32,29 @@ interface DomRowType {
 }
 
 const Row = (props: DomRowType) => (
-  <div className={css.row}>
-    <div className={css.statement}>{props.statement.statement}</div>
-    <Radios
-      options={props.options}
-      statement={props.statement}
-      handleClick={props.handleClick}
-      values={props.values}
-    />
-  </div>
+  <tr className={css.row}>
+    <td className={css.statement}>{props.statement.statement}</td>
+    {Array.from(
+      Array(props.options)
+        .fill((index: number) => (
+          <td key={index}>
+            <Radio
+              name={props.statement.id}
+              value={props.statement.value}
+              checked={isChecked({
+                value: props.statement.value,
+                values: props.values,
+                index,
+              })}
+              handleClick={props.handleClick}
+              index={index}
+              values={props.values}
+            />
+          </td>
+        ))
+        .map((radio, index) => radio(index))
+    )}
+  </tr>
 );
 
 interface IsCheckProps {
@@ -59,36 +73,14 @@ const isChecked = (props: IsCheckProps) => {
   return props.value === props.index;
 };
 
-interface RadiosProps {
-  statement: RowType;
-  options: number;
-  handleClick: (props: ClickProps) => void;
-  values?: string[] | number[];
-}
+// interface RadiosProps {
+//   statement: RowType;
+//   options: number;
+//   handleClick: (props: ClickProps) => void;
+//   values?: string[] | number[];
+// }
 
-const Radios = (props: RadiosProps) => (
-  <div className={css.radios}>
-    {Array.from(
-      Array(props.options)
-        .fill((index: number) => (
-          <Radio
-            key={index}
-            name={props.statement.id}
-            value={props.statement.value}
-            checked={isChecked({
-              value: props.statement.value,
-              values: props.values,
-              index,
-            })}
-            handleClick={props.handleClick}
-            index={index}
-            values={props.values}
-          />
-        ))
-        .map((radio, index) => radio(index))
-    )}
-  </div>
-);
+// const Radios = (props: RadiosProps) => <div className={css.radios} />;
 
 interface ReturnValueProps {
   index: number;

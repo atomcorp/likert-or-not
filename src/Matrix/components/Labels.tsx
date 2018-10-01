@@ -4,13 +4,15 @@ import css from '../Matrix.css';
 import {LabelsProps} from '../definitions';
 
 const Labels = (props: LabelsProps) => (
-  <div className={css.columns}>
-    {props.labels.map((label) => (
-      <div key={label} className={css.column}>
-        {label}
-      </div>
-    ))}
-  </div>
+  <thead className={css.columns}>
+    <tr className={css.header}>
+      {props.labels.map((label) => (
+        <td key={label} className={css.column}>
+          {label}
+        </td>
+      ))}
+    </tr>
+  </thead>
 );
 
 export default Labels;

@@ -7,7 +7,7 @@ import Rows from './components/Rows';
 import {MatrixProps} from './definitions';
 
 const Matrix = (props: MatrixProps) => (
-  <div className={css.container}>
+  <table className={css.container}>
     <Title>{props.title}</Title>
     <Labels labels={props.labels} />
     <Rows
@@ -16,7 +16,7 @@ const Matrix = (props: MatrixProps) => (
       handleClick={props.handleClick}
       values={props.values}
     />
-  </div>
+  </table>
 );
 
 export default Matrix;

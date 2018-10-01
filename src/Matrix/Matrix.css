@@ -10,8 +10,8 @@
   border: 1px solid;
 }
 
-.columns {
-  display: flex;
+.header {
+  /* display: flex; */
 
   /* This is a special spacer to mimic the Statements */
   &::before {
@@ -26,7 +26,7 @@
 }
 
 .row {
-  display: flex;
+  /* display: flex; */
 }
 
 .statement {
@@ -34,7 +34,7 @@
 }
 
 .radios {
-  display: flex;
+  /* display: flex; */
   flex: 1;
 }
 
