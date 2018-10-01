@@ -2,28 +2,28 @@ import * as React from 'react';
 import css from '../Matrix.css';
 
 import {
-  RowsProps,
+  // RowsProps,
   DomRowType,
   ReturnValueProps,
   Radio,
   IsCheckProps,
 } from '../definitions';
 
-const Rows = (props: RowsProps) => (
-  <tbody className={css.rows}>
-    {props.statements.map((statement) => (
-      <Row
-        key={statement.id}
-        statement={statement}
-        options={props.options}
-        handleClick={props.handleClick}
-        values={props.values}
-      />
-    ))}
-  </tbody>
-);
+// const Rows = (props: RowsProps) => (
+//   <tbody className={css.rows}>
+//     {props.statements.map((statement) => (
+//       <Row
+//         key={statement.id}
+//         statement={statement}
+//         options={props.options}
+//         handleClick={props.handleClick}
+//         values={props.values}
+//       />
+//     ))}
+//   </tbody>
+// );
 
-const Row = (props: DomRowType) => (
+export const Row = (props: DomRowType) => (
   <tr className={css.row}>
     <td className={css.statement}>{props.statement.statement}</td>
     {Array.from(
@@ -91,4 +91,4 @@ const Radio = (props: Radio) => (
   />
 );
 
-export default Rows;
+// export default Rows;

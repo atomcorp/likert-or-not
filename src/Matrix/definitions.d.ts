@@ -24,15 +24,17 @@ export interface TitleProps {
   children: string;
 }
 
-export interface LabelsProps {
-  labels: string[];
+export interface HeaderProps {
+  // labels: string[];
+  children: React.ReactNode;
 }
 
 export interface RowsProps {
-  statements: RowsType;
-  options: number;
-  handleClick: (props: ClickProps) => void;
-  values?: string[] | number[];
+  // statements: RowsType;
+  // options: number;
+  // handleClick: (props: ClickProps) => void;
+  // values?: string[] | number[];
+  children: React.ReactNode;
 }
 
 export interface DomRowType {
