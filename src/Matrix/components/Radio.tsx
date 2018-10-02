@@ -9,7 +9,7 @@ const Radio = (props: Radio) => (
     value={props.value}
     type="radio"
     checked={props.checked}
-    onChange={(e) =>
+    onChange={(e: React.SyntheticEvent) =>
       props.handleClick(e, {
         id: props.name,
         value: props.value,
