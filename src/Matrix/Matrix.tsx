@@ -7,7 +7,7 @@ import Body from './components/Body';
 import Row from './components/Row';
 import Radio from './components/Radio';
 import {MatrixProps} from './definitions';
-import {isChecked} from './components/utils';
+import {isChecked, returnValueIfSpecifiedElseEnum} from './components/utils';
 
 const Matrix = (props: MatrixProps) => (
   <table className={css.container}>
@@ -31,15 +31,16 @@ const Matrix = (props: MatrixProps) => (
                 <td key={index}>
                   <Radio
                     name={row.id}
-                    value={row.value}
+                    value={returnValueIfSpecifiedElseEnum({
+                      index,
+                      values: props.values,
+                    })}
                     checked={isChecked({
                       value: row.value,
                       values: props.values,
                       index,
                     })}
                     handleClick={props.handleClick}
-                    index={index}
-                    values={props.values}
                   />
                 </td>
               ))

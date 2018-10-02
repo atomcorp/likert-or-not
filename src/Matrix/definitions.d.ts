@@ -16,7 +16,7 @@ export interface MatrixProps {
   title: string;
   labels: string[];
   rows: RowsType;
-  handleClick: (props: ClickProps) => void;
+  handleClick: (e: React.SyntheticEvent, props: ClickProps) => void;
   values?: string[] | number[];
 }
 
@@ -40,7 +40,7 @@ export interface RowsProps {
 export interface DomRowType {
   statement: RowType;
   options: number;
-  handleClick: (props: ClickProps) => void;
+  handleClick: (e: React.SyntheticEvent, props: ClickProps) => void;
   values?: string[] | number[];
 }
 
@@ -59,7 +59,6 @@ export interface Radio {
   name: string;
   value: number | string;
   checked: boolean;
-  index: number;
-  handleClick: (props: ClickProps) => void;
-  values?: string[] | number[];
+  handleClick: (e: React.SyntheticEvent, props: ClickProps) => void;
+  // values: string[] | number[];
 }
