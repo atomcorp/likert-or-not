@@ -51,4 +51,23 @@ const Matrix = (props: MatrixProps) => (
   </table>
 );
 
-export default Matrix;
+const withDefaultProps = <P extends object>(
+  WrappedComponent: React.ComponentType<MatrixProps>
+) => {
+  class WithDefaultProps extends React.Component<P & MatrixProps> {
+    returnDefaultValues() {
+      return Array.from(Array(this.props.labels.length).keys());
+    }
+    render() {
+      return (
+        <WrappedComponent
+          values={this.props.values || this.returnDefaultValues()}
+          {...this.props}
+        />
+      );
+    }
+  }
+  return WithDefaultProps;
+};
+
+export default withDefaultProps(Matrix);

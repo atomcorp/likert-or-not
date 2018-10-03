@@ -44,6 +44,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
     e: React.SyntheticEvent,
     props: {id: string; value: number}
   ) => {
+    /* tslint:disable */
     this.setState((prevState: ExampleState) => ({
       dataset: prevState.dataset.map((set) => {
         if (set.id === props.id) {
@@ -74,14 +75,23 @@ class Example extends React.Component<ExampleProps, ExampleState> {
             ))}
           </tbody>
         </table>
+        {this.props.values ? (
+          <Matrix
+            title="The title"
+            labels={this.props.labels}
+            values={this.props.values}
+            rows={this.state.dataset}
+            handleClick={this.handleClick}
+          />
+        ) : (
+          <Matrix
+            title="The title"
+            labels={this.props.labels}
+            rows={this.state.dataset}
+            handleClick={this.handleClick}
+          />
+        )}
 
-        <Matrix
-          title="The title"
-          labels={this.props.labels}
-          values={this.props.values}
-          rows={this.state.dataset}
-          handleClick={this.handleClick}
-        />
         <figure>
           <div className="example">
             <pre>
