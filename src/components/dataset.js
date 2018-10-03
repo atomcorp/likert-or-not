@@ -1,4 +1,4 @@
-const dataset = [
+export const specifyValuesDataset = [
   {
     id: 'a',
     statement: 'Courteousness',
@@ -21,4 +21,21 @@ const dataset = [
   },
 ];
 
-export default dataset;
+export const defaultValuesDataset = [
+  {
+    id: 'HR',
+    statement: 'HR',
+  },
+  {
+    id: 'Finance',
+    statement: 'Finance',
+  },
+  {
+    id: 'IT',
+    statement: 'IT',
+  },
+  {
+    id: 'Marketing',
+    statement: 'Marketing',
+  },
+];

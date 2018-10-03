@@ -14,8 +14,9 @@ Inbox:
   ☐ Error states / messages / criteria
   ☐ Examples for testing
   ☐ For public examples, show the React component structure
-  ☐ deffo do want <Table /> (not sure)
+  ☐ deffo do want <Table />? (not sure)
   ☐ Whether using <Table /> or <div />, make responsive
   ☐ use CSS variables for changing CSS options (like responsive size) in the main component
+  ☐ make id in dataset not required
 
 Later:

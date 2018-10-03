@@ -1,39 +1,48 @@
 import * as React from 'react';
 import Matrix from '../Matrix/Matrix';
-import dataset from './dataset';
-
-interface Dataset {
-  id: string;
-  statement: string;
-  value: number | string;
-}
+import {specifyValuesDataset, defaultValuesDataset} from './dataset';
+import {Dataset} from '../Matrix/definitions';
 
 const Page = () => (
   <div>
     <h1>Page</h1>
     <div>
-      <Example />
+      <Example
+        dataset={specifyValuesDataset}
+        labels={['Good', 'OK', 'Bad']}
+        values={['A', 'B', 'C']}
+      />
+      <Example
+        dataset={defaultValuesDataset}
+        labels={['Money', 'Time', 'Skill-']}
+      />
     </div>
   </div>
 );
 
-interface State {
+interface ExampleState {
   dataset: Dataset[];
 }
 
-class Example extends React.Component<{}, State> {
-  state: State;
-  constructor(props: {}) {
+interface ExampleProps {
+  dataset: Dataset[];
+  labels: string[];
+  values?: string[] | number[];
+}
+
+class Example extends React.Component<ExampleProps, ExampleState> {
+  state: ExampleState;
+  constructor(props: ExampleProps) {
     super(props);
     this.state = {
-      dataset,
+      dataset: this.props.dataset,
     };
   }
   handleClick = (
     e: React.SyntheticEvent,
     props: {id: string; value: number}
   ) => {
-    this.setState((prevState) => ({
+    this.setState((prevState: ExampleState) => ({
       dataset: prevState.dataset.map((set) => {
         if (set.id === props.id) {
           return Object.assign({}, set, {
@@ -47,7 +56,12 @@ class Example extends React.Component<{}, State> {
   render() {
     return (
       <div>
-        <h3>Possible values: {['A', 'B', 'C'].join(', ')}</h3>
+        <h3>
+          Possible values:{' '}
+          {this.props.values
+            ? this.props.values.join(', ')
+            : Array.from(Array(this.props.labels.length).keys()).join(', ')}
+        </h3>
         <table>
           <tbody>
             {this.state.dataset.map((row) => (
@@ -60,8 +74,8 @@ class Example extends React.Component<{}, State> {
 
         <Matrix
           title="The title"
-          labels={['Good', 'OK', 'Bad']}
-          values={['A', 'B', 'C']}
+          labels={this.props.labels}
+          values={this.props.values}
           rows={this.state.dataset}
           handleClick={this.handleClick}
         />
@@ -70,26 +84,15 @@ class Example extends React.Component<{}, State> {
             <pre>
               {`
           const dataset = [
-              {
-                id: 'a',
-                statement: 'Courteousness',
-                value: 'A',
-              },
-              {
-                id: 'b',
-                statement: 'Willingness to help',
-                value: 'B',
-              },
-              {
-                id: 'c',
-                statement: 'Efficiency/quickness',
-                value: 'C',
-              },
-              {
-                id: 'd',
-                statement: 'Ability to complete transaction',
-                value: 'A',
-              },
+              ${this.props.dataset.map(
+                (set) => `
+                {
+                  id: '${set.id}',
+                  statement: '${set.statement}',
+                  ${set.value ? `value: ${set.value}` : '(no value given)'}
+                },
+              `
+              )}
             ];
           `}
             </pre>
@@ -97,8 +100,12 @@ class Example extends React.Component<{}, State> {
               {`
             <Matrix
               title="The title"
-              labels={['Good', 'OK', 'Bad']}
-              values={['A', 'B', 'C']}
+              labels={${this.props.labels.join(', ')}}
+              ${
+                this.props.values
+                  ? `values={${this.props.values.join(', ')}}`
+                  : ''
+              }
               rows={this.state.dataset}
               handleClick={this.handleClick}
             />

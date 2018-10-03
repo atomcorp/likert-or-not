@@ -3,11 +3,14 @@ import css from './Matrix.css';
 import Header from './components/Header';
 import Title from './components/Title';
 import Body from './components/Body';
-// import {Row} from './components/Rows';
 import Row from './components/Row';
 import Radio from './components/Radio';
 import {MatrixProps} from './definitions';
-import {isChecked, returnValueIfSpecifiedElseEnum} from './components/utils';
+import {
+  isChecked,
+  returnValueIfSpecifiedElseEnum,
+  returnEnumArray,
+} from './components/utils';
 
 const Matrix = (props: MatrixProps) => (
   <table className={css.container}>
@@ -25,27 +28,23 @@ const Matrix = (props: MatrixProps) => (
       {props.rows.map((row) => (
         <Row className={css.row}>
           <td className={css.statement}>{row.statement}</td>
-          {Array.from(
-            Array(props.labels.length)
-              .fill((index: number) => (
-                <td key={index}>
-                  <Radio
-                    name={row.id}
-                    value={returnValueIfSpecifiedElseEnum({
-                      index,
-                      values: props.values,
-                    })}
-                    checked={isChecked({
-                      value: row.value,
-                      values: props.values,
-                      index,
-                    })}
-                    handleClick={props.handleClick}
-                  />
-                </td>
-              ))
-              .map((radio, index) => radio(index))
-          )}
+          {returnEnumArray(props.labels.length).map((index) => (
+            <td key={index}>
+              <Radio
+                name={row.id}
+                value={returnValueIfSpecifiedElseEnum({
+                  index,
+                  values: props.values,
+                })}
+                checked={isChecked({
+                  value: row.value || 0,
+                  values: props.values,
+                  index,
+                })}
+                handleClick={props.handleClick}
+              />
+            </td>
+          ))}
         </Row>
       ))}
     </Body>
