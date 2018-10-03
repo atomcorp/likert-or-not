@@ -26,7 +26,7 @@ const Matrix = (props: MatrixProps) => (
     </Header>
     <Body>
       {props.rows.map((row) => (
-        <Row className={css.row}>
+        <Row className={css.row} key={row.id}>
           <td className={css.statement}>{row.statement}</td>
           {returnEnumArray(props.labels.length).map((index) => (
             <td key={index}>

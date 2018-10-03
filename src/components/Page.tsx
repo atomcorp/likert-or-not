@@ -8,11 +8,13 @@ const Page = () => (
     <h1>Page</h1>
     <div>
       <Example
+        key={2}
         dataset={specifyValuesDataset}
         labels={['Good', 'OK', 'Bad']}
         values={['A', 'B', 'C']}
       />
       <Example
+        key={1}
         dataset={defaultValuesDataset}
         labels={['Money', 'Time', 'Skill-']}
       />
@@ -65,8 +67,9 @@ class Example extends React.Component<ExampleProps, ExampleState> {
         <table>
           <tbody>
             {this.state.dataset.map((row) => (
-              <tr>
-                <td>{row.statement}</td> <td>{row.value}</td>
+              <tr key={row.id}>
+                <td>{row.statement}</td>
+                <td>{row.value}</td>
               </tr>
             ))}
           </tbody>
