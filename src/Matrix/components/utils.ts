@@ -2,9 +2,10 @@ import {IsCheckProps, ReturnValueProps} from '../definitions';
 
 /**
  * Check whether the Radio is checked
- * - If user has specified the possible values prop we compare
+ * - If user has specified the possible Values prop we compare
  * with the current value
  * - If not, we compare with the index of the Radio in the row
+ * - If value is undefined will return false
  */
 export const isChecked = (props: IsCheckProps) => {
   if (props.values && props.values.length > 0) {
@@ -18,7 +19,7 @@ export const isChecked = (props: IsCheckProps) => {
 };
 
 /**
- * If user has specified the values prop this ensures it is used
+ * If user has specified the Values prop this ensures it is used
  * Otherwise it just returns the number of the index
  */
 export const returnValueIfSpecifiedElseEnum = (props: ReturnValueProps) => {

@@ -37,7 +37,7 @@ const Matrix = (props: MatrixProps) => (
                   values: props.values,
                 })}
                 checked={isChecked({
-                  value: row.value || 0,
+                  value: row.value,
                   values: props.values,
                   index,
                 })}

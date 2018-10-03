@@ -45,7 +45,7 @@ export interface DomRowType {
 }
 
 export interface IsCheckProps {
-  value: string | number;
+  value?: string | number;
   values?: string[] | number[];
   index: number;
 }
