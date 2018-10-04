@@ -4,13 +4,8 @@ import Header from './components/Header';
 import Title from './components/Title';
 import Body from './components/Body';
 import Row from './components/Row';
-import Radio from './components/Radio';
+import Radios from './components/Radios';
 import {MatrixProps} from './definitions';
-import {
-  isChecked,
-  returnValueIfSpecifiedElseEnum,
-  returnEnumArray,
-} from './components/utils';
 
 const Matrix = (props: MatrixProps) => (
   <table className={css.container}>
@@ -28,23 +23,13 @@ const Matrix = (props: MatrixProps) => (
       {props.rows.map((row) => (
         <Row className={css.row} key={row.id}>
           <td className={css.statement}>{row.statement}</td>
-          {returnEnumArray(props.labels.length).map((index) => (
-            <td key={index}>
-              <Radio
-                name={row.id}
-                value={returnValueIfSpecifiedElseEnum({
-                  index,
-                  values: props.values,
-                })}
-                checked={isChecked({
-                  value: row.value,
-                  values: props.values,
-                  index,
-                })}
-                handleClick={props.handleClick}
-              />
-            </td>
-          ))}
+          <Radios
+            length={props.labels.length}
+            id={row.id}
+            values={props.values}
+            value={row.value}
+            handleClick={props.handleClick}
+          />
         </Row>
       ))}
     </Body>

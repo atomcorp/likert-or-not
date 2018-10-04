@@ -70,3 +70,11 @@ export interface Dataset {
   statement: string;
   value?: number | string;
 }
+
+export interface RadiosProps {
+  length: number;
+  id: string;
+  values: string[] | number[] | undefined;
+  value: string | number | undefined;
+  handleClick: HandleClick;
+}
