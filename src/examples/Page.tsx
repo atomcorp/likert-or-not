@@ -1,7 +1,12 @@
 import * as React from 'react';
-import Matrix from '../Matrix/Matrix';
+import Matrix from '../lib';
 import {specifyValuesDataset, defaultValuesDataset} from './dataset';
-import {Dataset} from '../Matrix/definitions';
+
+export interface Dataset {
+  id: string;
+  statement: string;
+  value?: number | string;
+}
 
 const Page = () => (
   <div>

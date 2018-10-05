@@ -65,12 +65,6 @@ export interface Radio {
 
 export type HandleClick = (e: React.SyntheticEvent, props: ClickProps) => void;
 
-export interface Dataset {
-  id: string;
-  statement: string;
-  value?: number | string;
-}
-
 export interface RadiosProps {
   length: number;
   id: string;
