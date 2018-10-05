@@ -55,4 +55,6 @@ const withDefaultProps = <P extends object>(
   return WithDefaultProps;
 };
 
-export default withDefaultProps(Matrix);
+const test: React.ComponentType<MatrixProps> = withDefaultProps(Matrix);
+
+export default test;

@@ -4,7 +4,13 @@ The aim is to provide a simple matrix questionnire component for React.
 
 Work in progress
 
-My references
+Install:
+
+```
+npm -i likert-or-not
+```
+
+My references/see also
 
 - https://en.wikipedia.org/wiki/Questionnaire_construction
 - https://www.surveymonkey.com/curiosity/whats-best-way-design-matrix-question/
