@@ -1,0 +1,2 @@
+:root{--element-columns:1;--statement-width:50%;--column-width:auto}.container{width:500px;margin:0 auto;border:1px solid}.header{&:before{content:" ";width:var(--statement-width)}}.column{text-align:center;-ms-flex:1 0 var(--column-width);flex:1 0 var(--column-width)}.statement{width:var(--statement-width)}.radios{-ms-flex:1 1;flex:1 1}.radio{-ms-flex:1 0 var(--column-width);flex:1 0 var(--column-width)}
+/*# sourceMappingURL=index.css.map*/
