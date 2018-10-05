@@ -49,6 +49,7 @@ measureFileSizesBeforeBuild(paths.dist)
     fs.emptyDirSync(paths.dist);
     // Merge with the public folder
     // copyPublicFolder();
+    copyReadMe();
     // Start the webpack build
     return build(previousFileSizes);
   })
@@ -144,6 +145,22 @@ function build(previousFileSizes) {
 
 function copyPublicFolder() {
   fs.copySync(paths.appPublic, paths.dist, {
+    dereference: true,
+    filter: (file) => file !== paths.libIndexJs,
+  });
+}
+
+function copySync(src, dest) {
+  if (!fs.existsSync(src)) {
+    return false;
+  }
+
+  var data = fs.readFileSync(src, 'utf-8');
+  fs.writeFileSync(dest, data);
+}
+
+function copyReadMe() {
+  fs.copySync(paths.readmeMd, paths.dist + '/README.md', {
     dereference: true,
     filter: (file) => file !== paths.libIndexJs,
   });

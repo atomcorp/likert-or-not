@@ -57,4 +57,5 @@ module.exports = {
   servedPath: getServedPath(resolveApp('package.json')),
   libIndexJs: resolveApp('src/lib/index.ts'),
   dist: resolveApp('dist'),
+  readmeMd: resolveApp('README.md'),
 };
