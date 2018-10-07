@@ -35,12 +35,16 @@ __$styleInject(":root {\r\n  --element-columns: 1;\r\n  --statement-width: 50%;\
 var css = {"container":"_container_16ict_13","header":"_header_16ict_25","column":"_column_16ict_35","statement":"_statement_16ict_45","radios":"_radios_16ict_53","radio":"_radio_16ict_53"};
 
 var Header = function (props) { return (React.createElement("thead", { className: css.columns }, props.children)); };
+//# sourceMappingURL=Header.js.map
 
 var Title = function (props) { return React.createElement("caption", null, props.children); };
+//# sourceMappingURL=Title.js.map
 
 var Body = function (props) { return (React.createElement("tbody", { className: css.rows }, props.children)); };
+//# sourceMappingURL=Body.js.map
 
 var Row = function (props) { return (React.createElement("tr", { className: props.className }, props.children)); };
+//# sourceMappingURL=Row.js.map
 
 /**
  * Check whether the Radio is checked
@@ -54,7 +58,7 @@ var isChecked = function (props) {
         return props.value === props.values[props.index];
     }
     // coerce string number into a integer (eg '5' !== 5)
-    if (typeof props.value === "string") {
+    if (typeof props.value === 'string') {
         return parseInt(props.value, 10) === props.index;
     }
     return props.value === props.index;
@@ -76,6 +80,7 @@ var returnValueIfSpecifiedElseEnum = function (props) {
 var returnEnumArray = function (length) {
     return Array.from(Array(length).keys());
 };
+//# sourceMappingURL=utils.js.map
 
 var Radio = function (props) { return (React.createElement("input", { className: css.radio, name: props.name, value: props.value, type: "radio", checked: props.checked, onChange: function (e) {
         return props.handleClick(e, {
@@ -83,6 +88,7 @@ var Radio = function (props) { return (React.createElement("input", { className:
             value: props.value
         });
     } })); };
+//# sourceMappingURL=Radio.js.map
 
 var Radios = function (props) { return (React.createElement(React.Fragment, null, returnEnumArray(props.length).map(function (index) { return (React.createElement("td", { key: index },
     React.createElement(Radio, { name: props.id, value: returnValueIfSpecifiedElseEnum({
@@ -93,6 +99,7 @@ var Radios = function (props) { return (React.createElement(React.Fragment, null
             values: props.values,
             index: index
         }), handleClick: props.handleClick }))); }))); };
+//# sourceMappingURL=Radios.js.map
 
 var Matrix = function (props) { return (React.createElement("table", { className: css.container },
     React.createElement(Title, null, props.title),
@@ -100,7 +107,7 @@ var Matrix = function (props) { return (React.createElement("table", { className
         React.createElement(Row, { className: css.header }, props.labels.map(function (label) { return (React.createElement("td", { key: label, className: css.column }, label)); }))),
     React.createElement(Body, null, props.rows.map(function (row) { return (React.createElement(Row, { className: css.row, key: row.id },
         React.createElement("td", { className: css.statement }, row.statement),
-        React.createElement(Radios, { length: props.labels.length, id: row.id, values: props.values, value: row.value, handleClick: props.handleClick }))); })))); };
+        React.createElement(Radios, { length: props.labels.length, id: row.id, values: props.values || returnEnumArray(props.labels.length), value: row.value, handleClick: props.handleClick }))); })))); };
 
 exports.default = Matrix;
 //# sourceMappingURL=index.js.map

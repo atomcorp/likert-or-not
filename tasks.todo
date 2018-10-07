@@ -1,0 +1,27 @@
+Next:
+  ☐ Header/columns name !== value necessarily
+    use Values for Labels, if not specified
+  ☐ Write tests
+  ☐ Whether using <Table /> or <div />, make responsive
+
+Inbox: 
+  ✘ Use CSS Grid, with a fallback (or table?) @cancelled(18-09-27 21:28)
+  ✔ Structure should utilise composition @done(18-09-27 22:09)
+     Header/columns = Rating scales / labels / answers
+     Rows = Question/Statements
+     Radios = Items
+  ✔ Header (text above questionnaire) @done(18-09-27 22:09)
+  ☐ Checkboxes for multiple choice
+  ☐ Error states / messages / criteria
+  ☐ Examples for testing - https://react-live.kitten.sh/
+  ☐ For public examples, show the React component structure
+  ☐ deffo do want <Table />? (not sure)
+  ☐ use CSS variables for changing CSS options (like responsive size) in the main component
+  ☐ make id in dataset not required (why? can default to statement)
+  ☐ Publish to NPM - https://hackernoon.com/creating-a-library-of-react-components-using-create-react-app-without-ejecting-d182df690c6b
+Later:
+
+  
+Done: 
+  ✔ More generic row that can build both header and statement rows, easier to style and reason about @done(18-10-01 23:44)
+  ✔ compose/make-more-readable the Radio method @done(18-10-04 21:44)
