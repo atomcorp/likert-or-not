@@ -164,4 +164,8 @@ function copyReadMe() {
     dereference: true,
     filter: (file) => file !== paths.libIndexJs,
   });
+  fs.copySync(paths.definitions, paths.dist + '/definitions.d.ts', {
+    dereference: true,
+    filter: (file) => file !== paths.libIndexJs,
+  });
 }

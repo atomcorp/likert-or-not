@@ -1,6 +1,6 @@
 {
   "name": "likert-or-not",
-  "version": "0.1.0",
+  "version": "0.1.13",
   "private": false,
   "peerDependencies": {
     "react": "^16.0.0",
@@ -113,7 +113,8 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
-    "dist",
+    "dist/index.js",
+    "dist/definitions.d.ts",
     "README.md"
   ],
   "repository": {
@@ -123,5 +124,5 @@
   "author": {
     "name": "atomcorp"
   },
-  "types": "./src/lib/definitions.d.ts"
+  "types": "dist/definitions.d.ts"
 }

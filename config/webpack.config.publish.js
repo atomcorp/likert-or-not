@@ -66,6 +66,7 @@ module.exports = {
     // There will be one main bundle, and one file per asynchronous chunk.
     // We don't currently advertise code splitting but Webpack supports it.
     filename: 'index.js',
+    libraryTarget: 'commonjs2',
     chunkFilename: 'index.chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
@@ -119,6 +120,10 @@ module.exports = {
   },
   module: {
     strictExportPresence: true,
+    // externals: {
+    //   react: 'react', // this line is just to use the React dependency of our parent-testing-project instead of using our own React.
+    //   'react-dom': 'react-dom', // this line is just to use the React dependency of our parent-testing-project instead of using our own React.
+    // },
     rules: [
       // TODO: Disable require.ensure as it's not a standard language feature.
       // We are waiting for https://github.com/facebookincubator/create-react-app/issues/2176.

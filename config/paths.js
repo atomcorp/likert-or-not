@@ -58,4 +58,5 @@ module.exports = {
   libIndexJs: resolveApp('src/lib/index.ts'),
   dist: resolveApp('dist'),
   readmeMd: resolveApp('README.md'),
+  definitions: resolveApp('src/lib/definitions.d.ts'),
 };
