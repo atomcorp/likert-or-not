@@ -80,7 +80,6 @@ var returnValueIfSpecifiedElseEnum = function (props) {
 var returnEnumArray = function (length) {
     return Array.from(Array(length).keys());
 };
-//# sourceMappingURL=utils.js.map
 
 var Radio = function (props) { return (React.createElement("input", { className: css.radio, name: props.name, value: props.value, type: "radio", checked: props.checked, onChange: function (e) {
         return props.handleClick(e, {
@@ -108,6 +107,7 @@ var Matrix = function (props) { return (React.createElement("table", { className
     React.createElement(Body, null, props.rows.map(function (row) { return (React.createElement(Row, { className: css.row, key: row.id },
         React.createElement("td", { className: css.statement }, row.statement),
         React.createElement(Radios, { length: props.labels.length, id: row.id, values: props.values || returnEnumArray(props.labels.length), value: row.value, handleClick: props.handleClick }))); })))); };
+//# sourceMappingURL=index.js.map
 
 exports.default = Matrix;
 //# sourceMappingURL=index.js.map

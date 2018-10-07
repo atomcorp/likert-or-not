@@ -35,7 +35,3 @@ export const returnValueIfSpecifiedElseEnum = (props: ReturnValueProps) => {
  */
 export const returnEnumArray = (length: number) =>
   Array.from(Array(length).keys());
-
-export const returnDefaultValues = (length: number) => {
-  return Array.from(Array(length).keys());
-};
