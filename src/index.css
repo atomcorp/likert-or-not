@@ -1,6 +1,34 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 19px;
+:root {
+  --element-columns: 1;
+  --statement-width: 50%;
+  --column-width: auto;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid;
+}
+
+.header::before {
+  content: " ";
+  width: var(--statement-width);
+}
+
+.column {
+  text-align: center;
+  flex: 1 0 var(--column-width);
+}
+
+.statement {
+  width: var(--statement-width);
+}
+
+.radios {
+  /* display: flex; */
+  flex: 1;
+}
+
+.radio {
+  flex: 1 0 var(--column-width);
 }

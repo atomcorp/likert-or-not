@@ -1,17 +1,31 @@
-# Matrix || Grid || Multi-item scale || Likert || Rating scale && Questionnaire || Survey
+# likert-or-not
 
-The aim is to provide a simple matrix questionnire component for React.
+> React component
 
-Work in progress
+[![NPM](https://img.shields.io/npm/v/likert-or-not.svg)](https://www.npmjs.com/package/likert-or-not) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Install:
+## Install
 
+```bash
+npm install --save likert-or-not
 ```
-npm -i likert-or-not
+
+## Usage
+
+```tsx
+import * as React from 'react'
+
+import MyComponent from 'likert-or-not'
+
+class Example extends React.Component {
+  render () {
+    return (
+      <MyComponent />
+    )
+  }
+}
 ```
 
-My references/see also
+## License
 
-- https://en.wikipedia.org/wiki/Questionnaire_construction
-- https://www.surveymonkey.com/curiosity/whats-best-way-design-matrix-question/
-- https://github.com/rage/likert-react
+MIT © [atomcorp](https://github.com/atomcorp)
