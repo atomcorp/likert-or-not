@@ -1,4 +1,4 @@
-import { IsCheckProps, ReturnValueProps } from "../typings";
+import {IsCheckProps, ReturnValueProps} from '../typings';
 
 /**
  * Check whether the Radio is checked
@@ -12,7 +12,7 @@ export const isChecked = (props: IsCheckProps) => {
     return props.value === props.values[props.index];
   }
   // coerce string number into a integer (eg '5' !== 5)
-  if (typeof props.value === "string") {
+  if (typeof props.value === 'string') {
     return parseInt(props.value, 10) === props.index;
   }
   return props.value === props.index;
@@ -35,3 +35,7 @@ export const returnValueIfSpecifiedElseEnum = (props: ReturnValueProps) => {
  */
 export const returnEnumArray = (length: number) =>
   Array.from(Array(length).keys());
+
+export const returnDefaultValues = (length: number) => {
+  return Array.from(Array(length).keys());
+};
