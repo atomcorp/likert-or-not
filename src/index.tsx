@@ -5,10 +5,10 @@ import Title from './components/Title';
 import Body from './components/Body';
 import Row from './components/Row';
 import Radios from './components/Radios';
-import {MatrixProps} from './typings';
+import LikertOrNot from './index.d';
 import {returnEnumArray} from './components/utils';
 
-const Matrix = (props: MatrixProps) => (
+const Matrix = (props: LikertOrNot.Main) => (
   <table className={css.container}>
     <Title>{props.title}</Title>
     <Header>

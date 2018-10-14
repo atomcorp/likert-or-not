@@ -1,8 +1,8 @@
-import * as React from "react";
-import css from "../index.css";
-import { Radio } from "../typings";
+import * as React from 'react';
+import css from '../index.css';
+import LikertOrNot from '../index.d';
 
-const Radio = (props: Radio) => (
+const Radio = (props: LikertOrNot.Radio) => (
   <input
     className={css.radio}
     name={props.name}
@@ -12,7 +12,7 @@ const Radio = (props: Radio) => (
     onChange={(e: React.SyntheticEvent) =>
       props.handleClick(e, {
         id: props.name,
-        value: props.value
+        value: props.value,
       })
     }
   />

@@ -6,6 +6,7 @@
   "license": "MIT",
   "repository": "atomcorp/likert-or-not",
   "main": "dist/index.js",
+  "types": "dist/main.d.ts",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {

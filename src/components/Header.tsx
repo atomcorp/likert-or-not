@@ -1,9 +1,9 @@
-import * as React from "react";
-import css from "../index.css";
+import * as React from 'react';
+import css from '../index.css';
 
-import { HeaderProps } from "../typings";
+import LikertOrNot from '../index.d';
 
-const Header = (props: HeaderProps) => (
+const Header = (props: LikertOrNot.HeaderProps) => (
   <thead className={css.columns}>{props.children}</thead>
 );
 

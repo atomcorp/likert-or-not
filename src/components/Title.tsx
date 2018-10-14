@@ -1,8 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 // import css from '../index.css';
 
-import { TitleProps } from "../typings";
+import LikertOrNot from '../index.d';
 
-const Title = (props: TitleProps) => <caption>{props.children}</caption>;
+const Title = (props: LikertOrNot.TitleProps) => (
+  <caption>{props.children}</caption>
+);
 
 export default Title;

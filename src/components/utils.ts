@@ -1,4 +1,4 @@
-import {IsCheckProps, ReturnValueProps} from '../typings';
+import LikertOrNot from '../index.d';
 
 /**
  * Check whether the Radio is checked
@@ -7,7 +7,7 @@ import {IsCheckProps, ReturnValueProps} from '../typings';
  * - If not, we compare with the index of the Radio in the row
  * - If value is undefined will return false
  */
-export const isChecked = (props: IsCheckProps) => {
+export const isChecked = (props: LikertOrNot.IsCheckProps) => {
   if (props.values && props.values.length > 0) {
     return props.value === props.values[props.index];
   }
@@ -22,7 +22,9 @@ export const isChecked = (props: IsCheckProps) => {
  * If user has specified the Values prop this ensures it is used
  * Otherwise it just returns the number of the index
  */
-export const returnValueIfSpecifiedElseEnum = (props: ReturnValueProps) => {
+export const returnValueIfSpecifiedElseEnum = (
+  props: LikertOrNot.ReturnValueProps
+) => {
   if (props.values && props.values.length > 0) {
     return props.values[props.index];
   }

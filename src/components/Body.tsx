@@ -1,15 +1,9 @@
-import * as React from "react";
-import css from "../index.css";
+import * as React from 'react';
+import css from '../index.css';
 
-import {
-  RowsProps
-  // DomRowType,
-  // ReturnValueProps,
-  // Radio,
-  // IsCheckProps,
-} from "../typings";
+import LikertOrNot from '../index.d';
 
-const Body = (props: RowsProps) => (
+const Body = (props: LikertOrNot.RowsProps) => (
   <tbody className={css.rows}>{props.children}</tbody>
 );
 
