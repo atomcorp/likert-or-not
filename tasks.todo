@@ -1,6 +1,4 @@
 Next:
-  ☐ Add a Matrix namespace
-    https://www.typescriptlang.org/docs/handbook/namespaces.html
   ☐ Write tests
 
 Inbox: 
@@ -17,7 +15,7 @@ Inbox:
   ☐ deffo do want <Table />? (not sure)
   ☐ use CSS variables for changing CSS options (like responsive size) in the main component
   ☐ make id in dataset not required (why? can default to statement)
-  ☐ Publish to NPM - https://hackernoon.com/creating-a-library-of-react-components-using-create-react-app-without-ejecting-d182df690c6b
+  ☐ dataset/rows can be array of strings not objects
   ☐ Whether using <Table /> or <div />, make responsive
   ☐ Header/columns name !== value necessarily
     use Values for Labels, if not specified
@@ -29,3 +27,6 @@ Done:
   ✔ More generic row that can build both header and statement rows, easier to style and reason about @done(18-10-01 23:44)
   ✔ compose/make-more-readable the Radio method @done(18-10-04 21:44)
   ✔ Get it working as an actual npm package @done(18-10-07 22:12)
+  ✔ Add a Matrix namespace @done(18-10-14 19:55)
+  https://www.typescriptlang.org/docs/handbook/namespaces.html
+  ✔ Publish to NPM - https://hackernoon.com/creating-a-library-of-react-components-using-create-react-app-without-ejecting-d182df690c6b @done(18-10-14 20:01)

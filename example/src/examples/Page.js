@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Matrix from 'likert-or-not';
+import LikertOrNot from 'likert-or-not';
 import {specifyValuesDataset, defaultValuesDataset} from './dataset';
 
 export interface Dataset {
@@ -81,7 +81,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
           </tbody>
         </table>
         {this.props.values ? (
-          <Matrix
+          <LikertOrNot
             title="The title"
             labels={this.props.labels}
             values={this.props.values}
@@ -89,7 +89,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
             handleClick={this.handleClick}
           />
         ) : (
-          <Matrix
+          <LikertOrNot
             title="The title"
             labels={this.props.labels}
             rows={this.state.dataset}
@@ -116,7 +116,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
             </pre>
             <pre>
               {`
-            <Matrix
+            <LikertOrNot
               title="The title"
               labels={${this.props.labels.join(', ')}}
               ${

@@ -14,7 +14,9 @@ npm install --save likert-or-not
 
 The aim is to provide a simple matrix questionnire component for React.
 
-Work in progress
+It should be simple, responsive, accessible and easily extensible.
+
+_Work in progress_
 
 Install:
 
@@ -31,13 +33,24 @@ My references/see also
 ## Usage
 
 ```tsx
-import * as React from "react";
+import * as React from 'react';
 
-import MyComponent from "likert-or-not";
+import LikertOrNot from 'likert-or-not';
 
 class Example extends React.Component {
   render() {
-    return <MyComponent />;
+    return (
+      <LikertOrNot
+        title="The title"
+        labels={['Good', 'OK', 'Bad']}
+        rows={[
+          {
+            statement: 'This is a question, how do you feel about it?',
+          },
+        ]}
+        handleClick={this.handleClick}
+      />
+    );
   }
 }
 ```
