@@ -1,11 +1,7 @@
 import * as React from 'react';
+import LikertOrNot from '../index.d';
 
-interface RowProps {
-  children?: React.ReactNode;
-  className?: string;
-}
-
-const Row = (props: RowProps) => (
+const Row = (props: LikertOrNot.RowProps) => (
   <tr className={props.className}>{props.children}</tr>
 );
 

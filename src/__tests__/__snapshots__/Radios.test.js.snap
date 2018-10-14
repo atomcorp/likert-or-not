@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radios outputs an array of radio inputs 1`] = `
+Array [
+  <td>
+    <input
+      checked={true}
+      className={undefined}
+      name="RowId"
+      onChange={[Function]}
+      type="radio"
+      value="A"
+    />
+  </td>,
+  <td>
+    <input
+      checked={false}
+      className={undefined}
+      name="RowId"
+      onChange={[Function]}
+      type="radio"
+      value="B"
+    />
+  </td>,
+  <td>
+    <input
+      checked={false}
+      className={undefined}
+      name="RowId"
+      onChange={[Function]}
+      type="radio"
+      value="C"
+    />
+  </td>,
+]
+`;

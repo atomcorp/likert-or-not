@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title prints text in caption 1`] = `
+<tr
+  className="exampleClass"
+>
+  <div>
+    A node
+  </div>
+</tr>
+`;

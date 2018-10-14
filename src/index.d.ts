@@ -21,6 +21,11 @@ declare namespace LikertOrNot {
     value?: number | string;
   }
 
+  export interface RowProps {
+    children?: React.ReactNode;
+    className?: string;
+  }
+
   export interface ClickProps {
     id: string;
     value: number | string;
