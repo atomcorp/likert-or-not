@@ -10,6 +10,15 @@
   border: 1px solid;
 }
 
+.header {}
+
+.row {}
+
+.error {
+  background: tomato;
+  color: #fff;
+}
+
 .column {
   text-align: center;
   flex: 1 0 var(--column-width);
@@ -26,9 +35,4 @@
 
 .radio {
   flex: 1 0 var(--column-width);
-}
-
-.error {
-  background: tomato;
-  color: #fff;
 }
