@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Body prints text in tbody 1`] = `
+<tbody
+  className={undefined}
+>
+  <div>
+    The Body node
+  </div>
+</tbody>
+`;

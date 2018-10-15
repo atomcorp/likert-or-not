@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header prints text in thead 1`] = `
+<thead
+  className={undefined}
+>
+  <div>
+    The Header node
+  </div>
+</thead>
+`;
