@@ -13,6 +13,7 @@ const LikertOrNot = (props: LikertOrNot.Main) => (
     <Title>{props.title}</Title>
     <Header>
       <Row className={css.header}>
+        <td />
         {props.labels.map((label) => (
           <td key={label} className={css.column}>
             {label}
