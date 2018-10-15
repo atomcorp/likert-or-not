@@ -8,7 +8,7 @@ import Radios from './components/Radios';
 import LikertOrNot from './index.d';
 import {returnEnumArray} from './components/utils';
 
-const Matrix = (props: LikertOrNot.Main) => (
+const LikertOrNot = (props: LikertOrNot.Main) => (
   <table className={css.container}>
     <Title>{props.title}</Title>
     <Header>
@@ -21,8 +21,8 @@ const Matrix = (props: LikertOrNot.Main) => (
       </Row>
     </Header>
     <Body>
-      {props.rows.map((row) => (
-        <Row className={css.row} key={row.id}>
+      {props.rows.map((row, index) => (
+        <Row className={css.row} key={row.id || index}>
           <td className={css.statement}>{row.statement}</td>
           <Radios
             length={props.labels.length}
@@ -37,4 +37,4 @@ const Matrix = (props: LikertOrNot.Main) => (
   </table>
 );
 
-export default Matrix;
+export default LikertOrNot;

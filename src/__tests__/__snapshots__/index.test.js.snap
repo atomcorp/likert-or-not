@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LikertOrNot loads 1`] = `
+<table
+  className={undefined}
+>
+  <caption>
+    The title
+  </caption>
+  <thead
+    className={undefined}
+  >
+    <tr
+      className={undefined}
+    >
+      <td
+        className={undefined}
+      >
+        Good
+      </td>
+      <td
+        className={undefined}
+      >
+        OK
+      </td>
+      <td
+        className={undefined}
+      >
+        Bad
+      </td>
+    </tr>
+  </thead>
+  <tbody
+    className={undefined}
+  >
+    <tr
+      className={undefined}
+    >
+      <td
+        className={undefined}
+      >
+        This is a question, how do you feel about it?
+      </td>
+      <td>
+        <input
+          checked={false}
+          className={undefined}
+          name={undefined}
+          onChange={[Function]}
+          type="radio"
+          value={0}
+        />
+      </td>
+      <td>
+        <input
+          checked={false}
+          className={undefined}
+          name={undefined}
+          onChange={[Function]}
+          type="radio"
+          value={1}
+        />
+      </td>
+      <td>
+        <input
+          checked={false}
+          className={undefined}
+          name={undefined}
+          onChange={[Function]}
+          type="radio"
+          value={2}
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

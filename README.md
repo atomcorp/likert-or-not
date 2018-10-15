@@ -48,7 +48,7 @@ class Example extends React.Component {
             statement: 'This is a question, how do you feel about it?',
           },
         ]}
-        handleClick={this.handleClick}
+        handleClick={(e, {id, value}) => ({})}
       />
     );
   }
