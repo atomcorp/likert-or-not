@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title prints text in caption 1`] = `
+<input
+  checked={true}
+  className={undefined}
+  name="Radio name"
+  onChange={[Function]}
+  type="radio"
+  value="A"
+/>
+`;
+
+exports[`Title prints text in caption 2`] = `
+<input
+  checked={true}
+  className={undefined}
+  name="Radio name"
+  onChange={[Function]}
+  type="radio"
+  value="A"
+/>
+`;

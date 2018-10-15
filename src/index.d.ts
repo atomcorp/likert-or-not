@@ -82,7 +82,6 @@ declare namespace LikertOrNot {
     value: number | string;
     checked: boolean;
     handleClick: HandleClick;
-    // values: string[] | number[];
   }
 
   export type HandleClick = (
