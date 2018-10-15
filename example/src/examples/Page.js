@@ -17,6 +17,7 @@ const Page = () => (
         dataset={specifyValuesDataset}
         labels={['Good', 'OK', 'Bad']}
         values={['A', 'B', 'C']}
+        showErrors
       />
       <Example
         key={1}
@@ -52,12 +53,18 @@ class Example extends React.Component<ExampleProps, ExampleState> {
     /* tslint:disable */
     this.setState((prevState: ExampleState) => ({
       dataset: prevState.dataset.map((set) => {
+        let newSet = set;
+        if (this.props.showErrors && 'value' in props && set.hasError) {
+          newSet = Object.assign({}, newSet, {
+            hasError: false,
+          });
+        }
         if (set.id === props.id) {
-          return Object.assign({}, set, {
+          newSet = Object.assign({}, newSet, {
             value: props.value,
           });
         }
-        return set;
+        return newSet;
       }),
     }));
   };
@@ -102,12 +109,13 @@ class Example extends React.Component<ExampleProps, ExampleState> {
             <pre>
               {`
           const dataset = [
-              ${this.props.dataset.map(
+              ${this.state.dataset.map(
                 (set) => `
                 {
                   id: '${set.id}',
                   statement: '${set.statement}',
-                  ${set.value ? `value: ${set.value}` : '(no value given)'}
+                  ${set.value ? `value: ${set.value}` : '(no value given)'},
+                  ${'hasError' in set ? `hasError: ${set.hasError}` : ``}
                 },
               `
               )}

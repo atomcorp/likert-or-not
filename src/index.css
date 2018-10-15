@@ -32,3 +32,8 @@
 .radio {
   flex: 1 0 var(--column-width);
 }
+
+.error {
+  background: tomato;
+  color: #fff;
+}

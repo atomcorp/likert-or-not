@@ -19,11 +19,13 @@ declare namespace LikertOrNot {
     id: string;
     statement: string;
     value?: number | string;
+    hasError?: boolean;
   }
 
   export interface RowProps {
     children?: React.ReactNode;
     className?: string;
+    hasError?: boolean;
   }
 
   export interface ClickProps {

@@ -11,7 +11,7 @@ exports[`LikertOrNot loads 1`] = `
     className={undefined}
   >
     <tr
-      className={undefined}
+      className="undefined null"
     >
       <td
         className={undefined}
@@ -34,7 +34,7 @@ exports[`LikertOrNot loads 1`] = `
     className={undefined}
   >
     <tr
-      className={undefined}
+      className="undefined null"
     >
       <td
         className={undefined}

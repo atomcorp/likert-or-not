@@ -12,7 +12,7 @@ export const specifyValuesDataset = [
   {
     id: 'c',
     statement: 'Efficiency/quickness',
-    value: 'C',
+    hasError: true,
   },
   {
     id: 'd',

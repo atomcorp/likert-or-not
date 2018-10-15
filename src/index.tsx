@@ -22,7 +22,11 @@ const LikertOrNot = (props: LikertOrNot.Main) => (
     </Header>
     <Body>
       {props.rows.map((row, index) => (
-        <Row className={css.row} key={row.id || index}>
+        <Row
+          className={css.row}
+          key={row.id || index}
+          hasError={row.hasError || false}
+        >
           <td className={css.statement}>{row.statement}</td>
           <Radios
             length={props.labels.length}
