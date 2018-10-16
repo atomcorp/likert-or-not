@@ -1,8 +1,5 @@
 Next:
-  ☐ Checkboxes for multiple choice
   ☐ Whether using <Table /> or <div />, make responsive
-  ☐ Header/columns name !== value necessarily @high 
-    use Labels for Values, if not specified
 
 Inbox: 
   ✘ Use CSS Grid, with a fallback (or table?) @cancelled(18-09-27 21:28)
@@ -16,6 +13,7 @@ Inbox:
   ✔ make id in dataset not required (why? can default to statement) @done(18-10-15 22:52)
   ✔ dataset/rows can be array of strings not objects @done(18-10-15 22:52)
   ☐ custom classNames
+  ☐ build a component so people can generate sample dataset data
 
 Later:
   ☐ use CSS variables for changing CSS options (like responsive size) in the main component 
@@ -23,6 +21,7 @@ Later:
   ☐ Errors
     ✔ Rows state @done(18-10-15 23:14)
     ☐ messages @low 
+  ☐ Checkboxes for multiple choice
 
   
 Done: 
@@ -34,3 +33,8 @@ Done:
   ✔ Publish to NPM - https://hackernoon.com/creating-a-library-of-react-components-using-create-react-app-without-ejecting-d182df690c6b @done(18-10-14 20:01)
   ✔ make no CSS dependency @done(18-10-15 23:20)
   ✔ Write tests @started @done(18-10-15 22:12) @lasted()
+  ✘ Header/columns name !== value necessarily @high @cancelled(18-10-16 21:55)
+    use Labels for Values, if not specified
+    NO POINT. Just add same data props as labels if you need to use them
+    Thhis would create 3 different possibilities for Values to be,
+    1. values, 2. enumerable, 3. label 

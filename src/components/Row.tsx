@@ -3,7 +3,7 @@ import LikertOrNot from '../index.d';
 import css from '../index.css';
 
 const Row = (props: LikertOrNot.RowProps) => (
-  <tr className={`${props.className} ${props.hasError ? css.error : null}`}>
+  <tr className={`${props.className} ${props.hasError ? css.error : ''}`}>
     {props.children}
   </tr>
 );

@@ -15,14 +15,14 @@ const Page = () => (
       <Example
         key={2}
         dataset={specifyValuesDataset}
-        labels={['Good', 'OK', 'Bad']}
+        headers={['Good', 'OK', 'Bad']}
         values={['A', 'B', 'C']}
         showErrors
       />
       <Example
         key={1}
         dataset={defaultValuesDataset}
-        labels={['Money', 'Time', 'Skill-']}
+        headers={['Money', 'Time', 'Skill-']}
       />
     </div>
   </div>
@@ -75,13 +75,19 @@ class Example extends React.Component<ExampleProps, ExampleState> {
           Possible values:{' '}
           {this.props.values
             ? this.props.values.join(', ')
-            : Array.from(Array(this.props.labels.length).keys()).join(', ')}
+            : Array.from(Array(this.props.headers.length).keys()).join(', ')}
         </h3>
-        <table>
+        <table border="1">
+          <thead>
+            <tr>
+              <td>Label</td>
+              <td>Value</td>
+            </tr>
+          </thead>
           <tbody>
             {this.state.dataset.map((row) => (
               <tr key={row.id}>
-                <td>{row.statement}</td>
+                <td>{row.label}</td>
                 <td>{row.value}</td>
               </tr>
             ))}
@@ -90,7 +96,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
         {this.props.values ? (
           <LikertOrNot
             title="The title"
-            labels={this.props.labels}
+            headers={this.props.headers}
             values={this.props.values}
             rows={this.state.dataset}
             handleClick={this.handleClick}
@@ -98,7 +104,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
         ) : (
           <LikertOrNot
             title="The title"
-            labels={this.props.labels}
+            headers={this.props.headers}
             rows={this.state.dataset}
             handleClick={this.handleClick}
           />
@@ -113,7 +119,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
                 (set) => `
                 {
                   id: '${set.id}',
-                  statement: '${set.statement}',
+                  label: '${set.label}',
                   ${set.value ? `value: ${set.value}` : '(no value given)'},
                   ${'hasError' in set ? `hasError: ${set.hasError}` : ``}
                 },
@@ -126,7 +132,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
               {`
             <LikertOrNot
               title="The title"
-              labels={${this.props.labels.join(', ')}}
+              labels={${this.props.headers.join(', ')}}
               ${
                 this.props.values
                   ? `values={${this.props.values.join(', ')}}`

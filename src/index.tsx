@@ -12,11 +12,11 @@ const LikertOrNot = (props: LikertOrNot.Main) => (
   <table className={css.container}>
     <Title>{props.title}</Title>
     <Header>
-      <Row className={css.header}>
+      <Row className={css.headers}>
         <td />
-        {props.labels.map((label) => (
-          <td key={label} className={css.column}>
-            {label}
+        {props.headers.map((header) => (
+          <td key={header} className={css.header}>
+            {header}
           </td>
         ))}
       </Row>
@@ -28,11 +28,11 @@ const LikertOrNot = (props: LikertOrNot.Main) => (
           key={row.id || index}
           hasError={row.hasError || false}
         >
-          <td className={css.statement}>{row.statement}</td>
+          <td className={css.label}>{row.label}</td>
           <Radios
-            length={props.labels.length}
+            length={props.headers.length}
             id={row.id}
-            values={props.values || returnEnumArray(props.labels.length)}
+            values={props.values || returnEnumArray(props.headers.length)}
             value={row.value}
             handleClick={props.handleClick}
           />

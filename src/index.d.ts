@@ -10,14 +10,14 @@ declare namespace LikertOrNot {
   export interface Main {
     children?: React.ReactNode;
     title: string;
-    labels: string[];
+    headers: string[];
     rows: RowsType;
     handleClick: HandleClick;
     values?: string[] | number[];
   }
   export interface RowType {
     id: string;
-    statement: string;
+    label: string;
     value?: number | string;
     hasError?: boolean;
   }
@@ -38,7 +38,7 @@ declare namespace LikertOrNot {
   export interface MatrixProps {
     children?: React.ReactNode;
     title: string;
-    labels: string[];
+    headers: string[];
     rows: RowsType;
     handleClick: HandleClick;
     values?: string[] | number[];
@@ -49,7 +49,7 @@ declare namespace LikertOrNot {
   }
 
   export interface HeaderProps {
-    // labels: string[];
+    // headers: string[];
     children: React.ReactNode;
   }
 

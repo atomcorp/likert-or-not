@@ -1,22 +1,22 @@
 export const specifyValuesDataset = [
   {
     id: 'a',
-    statement: 'Courteousness',
+    label: 'Courteousness',
     value: 'A',
   },
   {
     id: 'b',
-    statement: 'Willingness to help',
+    label: 'Willingness to help',
     value: 'B',
   },
   {
     id: 'c',
-    statement: 'Efficiency/quickness',
+    label: 'Efficiency/quickness',
     hasError: true,
   },
   {
     id: 'd',
-    statement: 'Ability to complete transaction',
+    label: 'Ability to complete transaction',
     value: 'A',
   },
 ];
@@ -24,18 +24,18 @@ export const specifyValuesDataset = [
 export const defaultValuesDataset = [
   {
     id: 'HR',
-    statement: 'HR',
+    label: 'HR',
   },
   {
     id: 'Finance',
-    statement: 'Finance',
+    label: 'Finance',
   },
   {
     id: 'IT',
-    statement: 'IT',
+    label: 'IT',
   },
   {
     id: 'Marketing',
-    statement: 'Marketing',
+    label: 'Marketing',
   },
 ];

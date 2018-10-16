@@ -2,6 +2,7 @@
   --element-columns: 1;
   --statement-width: 50%;
   --column-width: auto;
+  --small-screen-size: 800px;
 }
 
 .container {
@@ -10,8 +11,6 @@
   border: 1px solid;
 }
 
-.header {}
-
 .row {}
 
 .error {
@@ -19,20 +18,14 @@
   color: #fff;
 }
 
-.column {
-  text-align: center;
-  flex: 1 0 var(--column-width);
-}
+.headers {}
 
-.statement {
-  width: var(--statement-width);
-}
+.header {}
 
-.radios {
-  /* display: flex; */
-  flex: 1;
-}
+.label {}
 
-.radio {
-  flex: 1 0 var(--column-width);
+.radio {}
+
+@media (min-width: var(--small-screen-size)) {
+  
 }
