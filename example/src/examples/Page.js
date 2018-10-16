@@ -1,6 +1,7 @@
 import * as React from 'react';
 import LikertOrNot from 'likert-or-not';
 import {specifyValuesDataset, defaultValuesDataset} from './dataset';
+import './test.css';
 
 export interface Dataset {
   id: string;

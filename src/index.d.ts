@@ -84,6 +84,7 @@ declare namespace LikertOrNot {
     value: number | string;
     checked: boolean;
     handleClick: HandleClick;
+    header: string;
   }
 
   export type HandleClick = (
@@ -97,6 +98,7 @@ declare namespace LikertOrNot {
     values: string[] | number[] | undefined;
     value: string | number | undefined;
     handleClick: HandleClick;
+    headers: string[];
   }
 }
 

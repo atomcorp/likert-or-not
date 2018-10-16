@@ -12,7 +12,7 @@ const LikertOrNot = (props: LikertOrNot.Main) => (
   <table className={css.container}>
     <Title>{props.title}</Title>
     <Header>
-      <Row className={css.headers}>
+      <Row className={css.row}>
         <td />
         {props.headers.map((header) => (
           <td key={header} className={css.header}>
@@ -35,6 +35,7 @@ const LikertOrNot = (props: LikertOrNot.Main) => (
             values={props.values || returnEnumArray(props.headers.length)}
             value={row.value}
             handleClick={props.handleClick}
+            headers={props.headers}
           />
         </Row>
       ))}

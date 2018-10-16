@@ -1,0 +1,9 @@
+.likert-or-not__container {
+  margin: 0 auto;
+  border: 1px solid;
+}
+
+.likert-or-not__error {
+  background: tomato;
+  color: #fff;
+}

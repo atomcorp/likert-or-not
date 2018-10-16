@@ -1,31 +1,55 @@
+/** 
+ * some classes are empty to ensure the class 
+ * is added to the DOM element by CSS Modules 
+ */
+
 :root {
   --element-columns: 1;
   --statement-width: 50%;
   --column-width: auto;
-  --small-screen-size: 800px;
 }
 
-.container {
-  width: 500px;
-  margin: 0 auto;
-  border: 1px solid;
+.container {}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.row {}
+.error {}
 
-.error {
-  background: tomato;
-  color: #fff;
+.headers {
+  display: none;
 }
-
-.headers {}
 
 .header {}
 
-.label {}
+.label {
+  width: 100%;
+}
 
-.radio {}
+.radio {
+  display: block;
+}
 
-@media (min-width: var(--small-screen-size)) {
-  
+.inlineLabel {}
+
+@media (min-width: 768px) {
+  .headers {
+    display: table-header-group;
+  }
+  .row {
+    display: table-row;
+    flex-wrap: initial;
+  }
+
+  .label {
+    width: initial;
+  }
+  .radio:after {
+    content: '';
+  }
+  .inlineLabel {
+    display: none;
+  }
 }

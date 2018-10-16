@@ -23,6 +23,7 @@ const Radios = (props: LikertOrNot.RadiosProps) => (
             index,
           })}
           handleClick={props.handleClick}
+          header={props.headers[index]}
         />
       </td>
     ))}
