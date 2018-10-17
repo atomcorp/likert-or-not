@@ -2,7 +2,7 @@
 
 exports[`Title prints text in caption 1`] = `
 <tr
-  className="exampleClass null"
+  className="exampleClass "
 >
   <div>
     A node

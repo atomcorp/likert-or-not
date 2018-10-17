@@ -11,8 +11,9 @@ exports[`LikertOrNot loads 1`] = `
     className={undefined}
   >
     <tr
-      className="undefined null"
+      className="undefined "
     >
+      <td />
       <td
         className={undefined}
       >
@@ -34,7 +35,7 @@ exports[`LikertOrNot loads 1`] = `
     className={undefined}
   >
     <tr
-      className="undefined null"
+      className="undefined "
     >
       <td
         className={undefined}
@@ -42,34 +43,61 @@ exports[`LikertOrNot loads 1`] = `
         This is a question, how do you feel about it?
       </td>
       <td>
-        <input
-          checked={false}
+        <label
           className={undefined}
-          name={undefined}
-          onChange={[Function]}
-          type="radio"
-          value={0}
-        />
+        >
+          <input
+            checked={false}
+            className={undefined}
+            name={undefined}
+            onChange={[Function]}
+            type="radio"
+            value={0}
+          />
+          <span
+            className={undefined}
+          >
+            Good
+          </span>
+        </label>
       </td>
       <td>
-        <input
-          checked={false}
+        <label
           className={undefined}
-          name={undefined}
-          onChange={[Function]}
-          type="radio"
-          value={1}
-        />
+        >
+          <input
+            checked={false}
+            className={undefined}
+            name={undefined}
+            onChange={[Function]}
+            type="radio"
+            value={1}
+          />
+          <span
+            className={undefined}
+          >
+            OK
+          </span>
+        </label>
       </td>
       <td>
-        <input
-          checked={false}
+        <label
           className={undefined}
-          name={undefined}
-          onChange={[Function]}
-          type="radio"
-          value={2}
-        />
+        >
+          <input
+            checked={false}
+            className={undefined}
+            name={undefined}
+            onChange={[Function]}
+            type="radio"
+            value={2}
+          />
+          <span
+            className={undefined}
+          >
+            Bad
+          </span>
+        </label>
       </td>
     </tr>
   </tbody>

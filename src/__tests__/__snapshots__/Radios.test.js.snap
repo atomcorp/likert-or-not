@@ -3,34 +3,61 @@
 exports[`Radios outputs an array of radio inputs 1`] = `
 Array [
   <td>
-    <input
-      checked={true}
+    <label
       className={undefined}
-      name="RowId"
-      onChange={[Function]}
-      type="radio"
-      value="A"
-    />
+    >
+      <input
+        checked={true}
+        className={undefined}
+        name="RowId"
+        onChange={[Function]}
+        type="radio"
+        value="A"
+      />
+      <span
+        className={undefined}
+      >
+        Header 1
+      </span>
+    </label>
   </td>,
   <td>
-    <input
-      checked={false}
+    <label
       className={undefined}
-      name="RowId"
-      onChange={[Function]}
-      type="radio"
-      value="B"
-    />
+    >
+      <input
+        checked={false}
+        className={undefined}
+        name="RowId"
+        onChange={[Function]}
+        type="radio"
+        value="B"
+      />
+      <span
+        className={undefined}
+      >
+        Header 2
+      </span>
+    </label>
   </td>,
   <td>
-    <input
-      checked={false}
+    <label
       className={undefined}
-      name="RowId"
-      onChange={[Function]}
-      type="radio"
-      value="C"
-    />
+    >
+      <input
+        checked={false}
+        className={undefined}
+        name="RowId"
+        onChange={[Function]}
+        type="radio"
+        value="C"
+      />
+      <span
+        className={undefined}
+      >
+        Header 3
+      </span>
+    </label>
   </td>,
 ]
 `;

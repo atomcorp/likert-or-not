@@ -9,6 +9,7 @@ test('Radios outputs an array of radio inputs', () => {
       id={'RowId'}
       values={['A', 'B', 'C']}
       value={'A'}
+      headers={['Header 1', 'Header 2', 'Header 3']}
       handleClick={jest.fn(() => ({}))}
     />
   );
