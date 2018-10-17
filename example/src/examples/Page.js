@@ -135,7 +135,7 @@ class Example extends React.Component<ExampleProps, ExampleState> {
               {`
             <LikertOrNot
               title="The title"
-              labels={${this.props.headers.join(', ')}}
+              headers={${this.props.headers.join(', ')}}
               ${
                 this.props.values
                   ? `values={${this.props.values.join(', ')}}`
