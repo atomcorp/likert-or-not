@@ -1,14 +1,10 @@
 # likert-or-not
 
+![Example image](https://github.com/atomcorp/likert-or-not/blob/master/example/public/example.png)
+
 > React component
 
 [![NPM](https://img.shields.io/npm/v/likert-or-not.svg)](https://www.npmjs.com/package/likert-or-not) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
-## Install
-
-```bash
-npm install --save likert-or-not
-```
 
 ## Matrix || Grid || Multi-item scale || Likert || Rating scale && Questionnaire || Survey
 
@@ -21,7 +17,7 @@ _Work in progress_
 Install:
 
 ```
-npm -i likert-or-not
+npm i -D likert-or-not
 ```
 
 My references/see also
@@ -42,10 +38,13 @@ class Example extends React.Component {
     return (
       <LikertOrNot
         title="The title"
-        labels={['Good', 'OK', 'Bad']}
+        headers={['Good', 'OK', 'Bad']}
+        values={['A', 'B', 'C']}
         rows={[
           {
-            statement: 'This is a question, how do you feel about it?',
+            label: 'This goes on the left',
+            id: 'firstRow',
+            value: 'A',
           },
         ]}
         handleClick={(e, {id, value}) => ({})}
