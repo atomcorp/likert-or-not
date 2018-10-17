@@ -55,6 +55,10 @@ class Example extends React.Component {
 }
 ```
 
+## Built with Create-React-Library
+
+https://github.com/transitive-bullshit/create-react-library
+
 ## License
 
 MIT © [atomcorp](https://github.com/atomcorp)
