@@ -1,5 +1,4 @@
 Next:
-  ☐ Whether using <Table /> or <div />, make responsive
 
 Inbox: 
   ✘ Use CSS Grid, with a fallback (or table?) @cancelled(18-09-27 21:28)
@@ -12,7 +11,7 @@ Inbox:
   ✔ deffo do want <Table />? (not sure) @done(18-10-15 22:41)
   ✔ make id in dataset not required (why? can default to statement) @done(18-10-15 22:52)
   ✔ dataset/rows can be array of strings not objects @done(18-10-15 22:52)
-  ☐ custom classNames
+  ☐ allow user overwritten/custom classNames
   ☐ build a component so people can generate sample dataset data
 
 Later:
@@ -38,3 +37,4 @@ Done:
     NO POINT. Just add same data props as labels if you need to use them
     Thhis would create 3 different possibilities for Values to be,
     1. values, 2. enumerable, 3. label 
+  ✔ Whether using <Table /> or <div />, make responsive @done(18-10-16 23:32)

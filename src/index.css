@@ -38,6 +38,7 @@
   .headers {
     display: table-header-group;
   }
+  
   .row {
     display: table-row;
     flex-wrap: initial;
@@ -46,9 +47,7 @@
   .label {
     width: initial;
   }
-  .radio:after {
-    content: '';
-  }
+  
   .inlineLabel {
     display: none;
   }

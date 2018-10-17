@@ -121,7 +121,9 @@ class Example extends React.Component<ExampleProps, ExampleState> {
                 {
                   id: '${set.id}',
                   label: '${set.label}',
-                  ${set.value ? `value: ${set.value}` : '(no value given)'},
+                  ${
+                    'value' in set ? `value: ${set.value}` : '(no value given)'
+                  },
                   ${'hasError' in set ? `hasError: ${set.hasError}` : ``}
                 },
               `
