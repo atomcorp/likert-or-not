@@ -1,5 +1,7 @@
 # likert-or-not
 
+[Demo!](https://atomcorp.github.io/likert-or-not/)
+
 ![Example image](https://github.com/atomcorp/likert-or-not/blob/master/example/public/example.png)
 
 > React component
