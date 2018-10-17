@@ -51,18 +51,18 @@ class Example extends React.Component<ExampleProps, ExampleState> {
     e: React.SyntheticEvent,
     props: {id: string, value: number}
   ) => {
-    /* tslint:disable */
     this.setState((prevState: ExampleState) => ({
       dataset: prevState.dataset.map((set) => {
         let newSet = set;
-        if (this.props.showErrors && 'value' in props && set.hasError) {
-          newSet = Object.assign({}, newSet, {
-            hasError: false,
-          });
-        }
+        console.log(props, set);
         if (set.id === props.id) {
           newSet = Object.assign({}, newSet, {
             value: props.value,
+          });
+        }
+        if (this.props.showErrors && 'value' in newSet && set.hasError) {
+          newSet = Object.assign({}, newSet, {
+            hasError: false,
           });
         }
         return newSet;
